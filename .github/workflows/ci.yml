@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Compile
+    - name: Compile main program
       run: gcc main.c -o calculator
-    - name: Run
-      run: ./calculator
+    - name: Compile and run tests
+      run: |
+        gcc test.c -o test
+        ./test
